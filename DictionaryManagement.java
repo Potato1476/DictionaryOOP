@@ -36,8 +36,6 @@ public class DictionaryManagement {
 
     public void insertFromFile() throws IOException {
         Scanner text = new Scanner(new File("dictionary.txt"));
-        boolean isTarget = true;
-        int i = 0;
         if (!text.hasNextLine()) {
             Word newWord = new Word();
             newWord.setTaget(text.next());
