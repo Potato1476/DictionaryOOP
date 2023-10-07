@@ -35,20 +35,18 @@ public class DictionaryManagement {
     }
 
     public void insertFromFile() throws IOException {
+
         Scanner text = new Scanner(new File("dictionary.txt"));
-        if (!text.hasNextLine()) {
+
+        while (text.hasNextLine()) {
             Word newWord = new Word();
-            newWord.setTaget(text.next());
-            newWord.setExplain(text.next());
+            String line = text.nextLine();
+            String temp[] = line.split("    ");
+            newWord.setTaget(temp[0]);
+            newWord.setExplain(temp[1]);
             wordList.add(newWord);
-        } else {
-            while(text.hasNextLine()) {
-                String line = text.nextLine();
-                Word newWord = new Word();
-                newWord.setTaget(line.next());
-                newWord.setExplain(line.next());
-                wordList.add(newWord);
-            }
         }
+        
     }
+
 }
