@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -30,4 +34,23 @@ public class DictionaryManagement {
         input.close();
     }
 
+    public void insertFromFile() throws IOException {
+        Scanner text = new Scanner(new File("dictionary.txt"));
+        boolean isTarget = true;
+        int i = 0;
+        if (!text.hasNextLine()) {
+            Word newWord = new Word();
+            newWord.setTaget(text.next());
+            newWord.setExplain(text.next());
+            wordList.add(newWord);
+        } else {
+            while(text.hasNextLine()) {
+                String line = text.nextLine();
+                Word newWord = new Word();
+                newWord.setTaget(line.next());
+                newWord.setExplain(line.next());
+                wordList.add(newWord);
+            }
+        }
+    }
 }
