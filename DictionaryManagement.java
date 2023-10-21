@@ -49,4 +49,18 @@ public class DictionaryManagement {
         
     }
 
+    public void addWord() {
+
+        Scanner input = new Scanner(System.in);
+
+        String target = input.nextLine();
+        String explain = input.nextLine();
+
+        Word newWord = new Word();
+        newWord.setTaget(target);
+        newWord.setExplain(explain);
+        wordList.add(newWord);    
+        
+    }
+
 }
