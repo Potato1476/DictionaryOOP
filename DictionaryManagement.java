@@ -92,5 +92,20 @@ public class DictionaryManagement {
         }
     }
 
+    public void deleteWord() {
+
+        Scanner input = new Scanner(System.in);
+
+        String inputString = input.nextLine();
+
+        for (int i = 0; i < wordList.size(); i++) {
+            if (inputString.equals(wordList.get(i).getTarget())) {
+                wordList.remove(i);
+                return;
+            }
+        }
+        System.out.println("Khong ton tai tu can xoa.");
+        
+    }
 
 }
