@@ -58,7 +58,7 @@ public class DictionaryManagement {
 
         for (int i = 0; i < wordList.size(); i++) {
             if (target.equals(wordList.get(i).getTarget()) && explain.equals(wordList.get(i).getExplain())) {
-                System.out.println("Tu nay da ton tai!");
+                System.out.println("Tu nay da ton tai.");
                 return;
             }
         }
@@ -76,6 +76,7 @@ public class DictionaryManagement {
 
         String inputString = input.nextLine();
 
+        boolean hasWord = false;
         for (int i = 0; i < wordList.size(); i++) {
             String target = wordList.get(i).getTarget();
             String explain = wordList.get(i).getExplain();
@@ -83,7 +84,13 @@ public class DictionaryManagement {
                 System.out.print(target);
                 System.out.print(" | ");
                 System.out.println(explain);
+                hasWord = true;
             }
+        }
+        if (!hasWord) {
+            System.out.println("Khong tim thay tu nao.");
+        }
     }
+
 
 }
