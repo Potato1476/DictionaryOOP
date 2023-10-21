@@ -56,11 +56,18 @@ public class DictionaryManagement {
         String target = input.nextLine();
         String explain = input.nextLine();
 
+        for (int i = 0; i < wordList.size(); i++) {
+            if (target.equals(wordList.get(i).getTarget()) && explain.equals(wordList.get(i).getExplain())) {
+                System.out.println("Tu nay da ton tai!");
+                return;
+            }
+        }
+
         Word newWord = new Word();
         newWord.setTaget(target);
         newWord.setExplain(explain);
         wordList.add(newWord);    
-        
+
     }
 
 }
