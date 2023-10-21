@@ -70,4 +70,20 @@ public class DictionaryManagement {
 
     }
 
+    public void dictionaryLookup() {
+
+        Scanner input = new Scanner(System.in);
+
+        String inputString = input.nextLine();
+
+        for (int i = 0; i < wordList.size(); i++) {
+            String target = wordList.get(i).getTarget();
+            String explain = wordList.get(i).getExplain();
+            if (target.contains(inputString) || explain.contains(inputString)) {
+                System.out.print(target);
+                System.out.print(" | ");
+                System.out.println(explain);
+            }
+    }
+
 }
